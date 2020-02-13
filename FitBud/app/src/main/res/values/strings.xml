@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FitBud</string>
+    <string name="workout_generator_button">workout generator button</string>
+    <string name="caloric_helper_button">caloric helper button</string>
+    <string name="applogo">appLogo</string>
+</resources>
