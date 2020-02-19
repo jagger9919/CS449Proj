@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class infoPage extends AppCompatActivity implements View.OnClickListener{
@@ -16,6 +17,7 @@ public class infoPage extends AppCompatActivity implements View.OnClickListener{
         ImageButton backButton = findViewById(R.id.backBtn);
         backButton.setOnClickListener(this);
 
+
     }
     @Override
     public void onClick(View v){
@@ -23,6 +25,8 @@ public class infoPage extends AppCompatActivity implements View.OnClickListener{
             case R.id.backBtn:
                 finish();
                 break;
+
+
         }
     }
 }
