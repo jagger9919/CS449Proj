@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FitBud</string>
-    <string name="workout_generator_button">workout generator button</string>
-    <string name="caloric_helper_button">caloric helper button</string>
-    <string name="applogo">appLogo</string>
+
+    <string name="version_1_1_0">Version: 1.1.0</string>
+    <string name="workoutgenbutton">workoutGenButton</string>
+    <string name="calorichelperbutton">caloricHelperButton</string>
+    <string name="developer_judge_greenberger">Developer: Judge Greenberger</string>
+    <string name="applogo">applogo</string>
+    <string name="app_name">F.I.T Bud</string>
 </resources>

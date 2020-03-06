@@ -33,8 +33,7 @@
         android:layout_marginEnd="57dp"
         android:layout_marginRight="57dp"
         android:layout_marginBottom="292dp"
-        android:text="Developer:
-                         Judge Greenberger"
+        android:text="@string/developer_judge_greenberger"
         android:textColor="@android:color/black"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +53,7 @@
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginBottom="134dp"
-        android:text="Version: 1.0.0"
+        android:text="@string/version_1_1_0"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

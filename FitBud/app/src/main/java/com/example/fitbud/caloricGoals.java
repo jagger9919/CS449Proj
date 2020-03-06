@@ -28,11 +28,12 @@ public class caloricGoals extends AppCompatActivity implements View.OnClickListe
         EditText goalWeightVal = findViewById(R.id.goalWeight);
         EditText currWeightVal = findViewById(R.id.weight);
         EditText waistVal = findViewById(R.id.waistSize);
-
+        EditText sexVal = findViewById(R.id.sex);
         String sHeight = heightVal.getText().toString();
         String gWeight = goalWeightVal.getText().toString();
         String cWeight = currWeightVal.getText().toString();
         String sWaist = waistVal.getText().toString();
+        String sexS = sexVal.getText().toString();
 
         switch(v.getId()){
             case R.id.backBtn:
@@ -47,8 +48,17 @@ public class caloricGoals extends AppCompatActivity implements View.OnClickListe
                         if (!"".equals(cWeight)){
                             int CurrW = Integer.parseInt(cWeight);
                             if (!"".equals(sWaist)){
-                                float Waist = Integer.parseInt(sWaist);
-
+                                String upperSex = sexS.toUpperCase();
+                                if (upperSex.contains("MALE")|| upperSex.contains("FEMALE")) {
+                                    float Waist = Integer.parseInt(sWaist);
+                                    userData user = new userData(CurrW, GoalW, Height, Waist, upperSex);
+                                    Intent intent = new Intent(this, caloriePage.class);
+                                    intent.putExtra("user", user);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    showAlertDialog("sex");
+                                }
                             }
                             else{
                                 showAlertDialog("waist");
@@ -83,6 +93,9 @@ public class caloricGoals extends AppCompatActivity implements View.OnClickListe
         }
         else if (problem.equals("waist")){
             alert.setTitle("Please enter your waist size");
+        }
+        else if (problem.equals("sex")){
+            alert.setTitle("Please input Male or Female");
         }
         alert.setNegativeButton("Close", new DialogInterface.OnClickListener() {
             @Override

@@ -55,6 +55,7 @@ public class userQuestionnaire extends AppCompatActivity implements View.OnClick
                     int workoutTime = Integer.parseInt(wLength);
                     if(!"".equals(workoutType.getText().toString())){
                         String typeOfWorkout = workoutType.getText().toString();
+
                     }
                     else{
                         showAlertDialog("type");
