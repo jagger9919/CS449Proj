@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -37,25 +38,33 @@ public class userQuestionnaire extends AppCompatActivity implements View.OnClick
         TextView workoutType = findViewById(R.id.workoutType);
         EditText workoutLength = findViewById(R.id.workoutTime);
         String wLength = workoutLength.getText().toString();
+
         switch (v.getId()){
             case R.id.bodyWeight:
                 workoutType.setText("Body Weight");
+
                 break;
             case R.id.upperBody:
                 workoutType.setText("Upper Body");
+
                 break;
             case R.id.lowerBody:
                 workoutType.setText("Lower Body");
+
                 break;
             case R.id.cardioAbs:
                 workoutType.setText("Cardio/Abs");
+
                 break;
             case R.id.forwardBtn:
                 if (!"".equals(wLength)){
-                    int workoutTime = Integer.parseInt(wLength);
                     if(!"".equals(workoutType.getText().toString())){
                         String typeOfWorkout = workoutType.getText().toString();
-
+                        int workoutTime = Integer.parseInt(wLength);
+                        userData user1 = new userData(typeOfWorkout, workoutTime);
+                        Intent workOut = new Intent(this, workoutSummary.class);
+                        workOut.putExtra("workoutInfo", user1);
+                        startActivity(workOut);
                     }
                     else{
                         showAlertDialog("type");

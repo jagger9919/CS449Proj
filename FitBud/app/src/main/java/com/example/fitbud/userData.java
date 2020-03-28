@@ -25,6 +25,15 @@ public class userData implements Parcelable {
         this.typeOfWorkout = "";
         this.sex = sex;
     }
+    public userData(String typeOfWorkout, int timeToWorkout){
+        this.typeOfWorkout = typeOfWorkout;
+        this.timeToWorkout = timeToWorkout;
+        this.weight = 0;
+        this.height = 0;
+        this.goalWeight =0;
+        this.waist = 0;
+        this.sex = "";
+    }
 
     protected userData(Parcel in) {
         weight = in.readInt();
@@ -51,7 +60,7 @@ public class userData implements Parcelable {
     };
 
     public String getTypeOfWorkout(){
-        return typeOfWorkout;
+        return this.typeOfWorkout;
     }
     public int getHeight(){
         return this.height;
@@ -80,9 +89,6 @@ public class userData implements Parcelable {
     }
     public int getCalsBurned(){
         return this.calsBurned;
-    }
-    public String getTypeofWorkout(){
-        return this.typeOfWorkout;
     }
     public String getSex(){ return this.sex; }
     public int getTotalCals(){ return this.totalCals;}
